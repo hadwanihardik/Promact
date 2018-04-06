@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-FW-wQ9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-FW-wQ9">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -59,11 +60,8 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-Pd-EUE">
-                                                    <rect key="frame" x="20" y="140" width="335" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="a54-Dc-H9t"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-Pd-EUE">
+                                                    <rect key="frame" x="20" y="142" width="335" height="22"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -95,7 +93,8 @@
                                                 <constraint firstItem="HNU-Di-al3" firstAttribute="centerX" secondItem="toP-uS-cFk" secondAttribute="centerX" id="c3v-O5-15P"/>
                                                 <constraint firstItem="toP-uS-cFk" firstAttribute="top" secondItem="awF-2t-KaC" secondAttribute="top" constant="5" id="cG9-1a-8XS"/>
                                                 <constraint firstItem="toP-uS-cFk" firstAttribute="leading" secondItem="awF-2t-KaC" secondAttribute="leading" constant="20" id="hDi-11-ZzE"/>
-                                                <constraint firstItem="tNq-Pd-EUE" firstAttribute="top" secondItem="4Zc-3S-x82" secondAttribute="bottom" id="r5l-cV-kHS"/>
+                                                <constraint firstItem="1DD-kU-a6J" firstAttribute="top" secondItem="tNq-Pd-EUE" secondAttribute="bottom" constant="5" id="n4y-CP-v9J"/>
+                                                <constraint firstItem="tNq-Pd-EUE" firstAttribute="top" secondItem="4Zc-3S-x82" secondAttribute="bottom" constant="2" id="r5l-cV-kHS"/>
                                                 <constraint firstAttribute="trailing" secondItem="toP-uS-cFk" secondAttribute="trailing" constant="20" id="sFB-jn-aSv"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -129,6 +128,7 @@
                             <constraint firstItem="DD3-vP-hdt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rfd-LA-YNf"/>
                             <constraint firstItem="2TL-FW-wQ9" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="tzQ-Bc-pdh"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fMG-nu-gjj"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -142,6 +142,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholderThumb" width="167" height="109"/>
+        <image name="placeholderThumb" width="167" height="58"/>
     </resources>
 </document>

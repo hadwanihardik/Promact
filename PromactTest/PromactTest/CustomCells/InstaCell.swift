@@ -16,7 +16,6 @@ class InstaCell: UITableViewCell {
     @IBOutlet weak var imageFeed: UIImageView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     var feed: InstaModel! = nil
-    let imageLoader =  ImageDownloader()
     override func awakeFromNib() {
         super.awakeFromNib()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.openInSafari))
@@ -37,30 +36,8 @@ class InstaCell: UITableViewCell {
         }
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
     }
-
-    func configureCell()
-    {
-        self.lblAutor.text = "Author: \(feed.author)"
-        let myString = NSMutableAttributedString(string:  "URL: \(feed.postUrl)")
-        let myRange = NSRange(location: 5, length: feed.postUrl.count)
-        myString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.blue, range: myRange)
-        // set attributed text on a UILabel
-        self.lblPostUrl.attributedText = myString
-        //Start loader
-        self.imageFeed.image = #imageLiteral(resourceName: "placeholderThumb")
-        self.loader.startAnimating()
-        imageLoader.downloadImageForPath(imgPath: self.createImageUrl(feed: feed)) { (image) in
-            self.loader.stopAnimating()
-            self.imageFeed.image = image
-        }
-        
-        
-    }
     
-    func createImageUrl(feed : InstaModel) -> String
-    {
-        return "\(Constants.BaseURL)\(feed.width)/\(feed.height)?image=\(feed.imageId)"
-    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
