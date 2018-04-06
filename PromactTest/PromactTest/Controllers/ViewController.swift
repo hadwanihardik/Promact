@@ -58,7 +58,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
        let cell = tableView.dequeueReusableCell(withIdentifier: "InstaCell", for: indexPath) as! InstaCell
         cell.feed = feedsArray[indexPath.row]
         
-        cell.lblAutor.text = "\(cell.feed.imageId) Author: \(cell.feed.author)"
+        cell.lblAutor.text = "Author: \(cell.feed.author)"
         let myString = NSMutableAttributedString(string:  "URL: \(cell.feed.postUrl)")
         let myRange = NSRange(location: 5, length: cell.feed.postUrl.count)
         myString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.blue, range: myRange)
