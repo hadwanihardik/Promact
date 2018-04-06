@@ -15,7 +15,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  "Feed List"
         // Do any additional setup after loading the view, typically from a nib.
         //get Feeds from server
         self.loadFeeds()
@@ -32,7 +31,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
                     if(feedsData.count > 0)
                     {
-                        print(self.feedsArray)
                         for feed in feedsData
                         {
                             self.feedsArray.append(InstaModel(dict: feed as! NSDictionary))
