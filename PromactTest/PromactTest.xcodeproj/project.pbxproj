@@ -137,6 +137,7 @@
 		5697AFF7207732A300830A13 = {
 			isa = PBXGroup;
 			children = (
+				5697B08B2077494800830A13 /* PromactTest-Bridging-Header.h */,
 				5697B002207732A300830A13 /* PromactTest */,
 				5697B0292077481F00830A13 /* SDWebImage */,
 				5697B001207732A300830A13 /* Products */,
@@ -161,7 +162,6 @@
 				5697B08E20774EE100830A13 /* Models */,
 				5697B08D20774ED100830A13 /* Utils */,
 				5697B00A207732A300830A13 /* Assets.xcassets */,
-				5697B08B2077494800830A13 /* PromactTest-Bridging-Header.h */,
 				5697B00F207732A300830A13 /* Info.plist */,
 			);
 			path = PromactTest;
