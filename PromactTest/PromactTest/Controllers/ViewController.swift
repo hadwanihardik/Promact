@@ -57,9 +57,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.configureCell()
         return cell
     }
-    
-   
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

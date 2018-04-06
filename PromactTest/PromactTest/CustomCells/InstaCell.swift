@@ -16,12 +16,13 @@ class InstaCell: UITableViewCell {
     @IBOutlet weak var imageFeed: UIImageView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     var feed: InstaModel! = nil
-
+    let imageLoader =  ImageDownloader()
     override func awakeFromNib() {
         super.awakeFromNib()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.openInSafari))
         self.lblPostUrl.addGestureRecognizer(tapGesture)
         self.lblPostUrl.isUserInteractionEnabled = true
+        
         // Initialization code
     }
     @objc func openInSafari() {
@@ -48,10 +49,12 @@ class InstaCell: UITableViewCell {
         //Start loader
         self.imageFeed.image = #imageLiteral(resourceName: "placeholderThumb")
         self.loader.startAnimating()
-        //Assign placeholder image to overcome from issue of older image to new cell
-        self.imageFeed.sd_setImage(with:  URL(string: self.createImageUrl(feed: feed)), placeholderImage: #imageLiteral(resourceName: "placeholderThumb"), options: SDWebImageOptions.highPriority) { (image, error, type, url) in
+        imageLoader.downloadImageForPath(imgPath: self.createImageUrl(feed: feed)) { (image) in
             self.loader.stopAnimating()
+            self.imageFeed.image = image
         }
+        
+        
     }
     
     func createImageUrl(feed : InstaModel) -> String
